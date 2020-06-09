@@ -6,13 +6,17 @@ function Start_prg {
 
 function Integer_values_only {
 
-     while (! [[ $number_of_files =~ [0-9] ]] )
+     while ( ! [[ $number_of_files =~ [0-9] ]] )
      do
 
-           echo "Enter again but not characters"
+           echo "your input was invalid"
            read number_of_files
      done
 }
+
+r=$( ls -l |wc -l)
+
+let r=$r-1
 
 Start_prg
 read number_of_files
@@ -20,10 +24,10 @@ Integer_values_only
 
 let temp=$number_of_files
 
-while [[ $temp -ne 3 ]]
+while [[ $temp -ne $r ]]
 do
 
-      if [[ $temp -lt 3 ]]
+      if [[ $temp -lt $r ]]
          then
               echo "You entered less number of files. Enter a high value."
 
