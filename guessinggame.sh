@@ -6,7 +6,7 @@ function Start_prg {
 
 function Integer_values_only {
 
-     while ( ! [[ $number_of_files =~ [0-9] ]] )
+     while ( ! [[ $number_of_files =~ ^[0-9]+$ ]] )
      do
 
            echo "your input was invalid"
